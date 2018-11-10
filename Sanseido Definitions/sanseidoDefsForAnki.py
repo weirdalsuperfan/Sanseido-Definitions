@@ -15,20 +15,26 @@
 from bs4.BeautifulSoup import BeautifulSoup
 import urllib
 import re
+from aqt.utils import showInfo
+import random
+
+from nhk_pronunciation import multi_lookup
 
 # Edit these field names if necessary ==========================================
-expressionField = 'Word'
+expressionField = 'Expression'
 definitionField = 'Sanseido'
 # ==============================================================================
 
 # Fetch definition from Sanseido ===============================================
 def fetchDef(term):
+    searched = re.search(r'^[^\[]+',term)
+    if searched:
+        term = searched.group(0)
 	defText = ""
-	pageUrl = "http://www.sanseido.net/User/Dic/Index.aspx?TWords=" + urllib.quote(term.encode('utf-8')) + "&st=0&DailyJJ=checkbox"
+	pageUrl = "http://www.sanseido.biz/User/Dic/Index.aspx?TWords=" + urllib.quote(term.encode('utf-8')) + "&st=0&DailyJJ=checkbox"
 	response = urllib.urlopen(pageUrl)
 	soup = BeautifulSoup(response)
 	NetDicBody = soup.find('div', class_ = "NetDicBody")
-
 	if NetDicBody != None:
 		defFinished = False
 		
@@ -45,6 +51,7 @@ def fetchDef(term):
 				defText += line.string
 				
 	defText = re.sub(ur"［(?P<no>[２-９]+)］", ur"<br/><br/>［\1］", defText)
+	if defText: defText = u"　・　<b>" + term + "</b>: " + defText
 	return re.sub(ur"（(?P<num>[２-９]+)）", ur"<br/>（\1）", defText)
 
 # Update note ==================================================================
@@ -55,8 +62,8 @@ from anki.notes import Note
 from aqt import mw
 
 def glossNote( f ):
-   if f[ definitionField ]: return
-   f[ definitionField ] = fetchDef( f[ expressionField ] )
+    if f[ definitionField ]: return
+    f[ definitionField ] = multi_lookup(f[ expressionField ], fetchDef, separator = "").lstrip('　・')
 
 def setupMenu( ed ):
 	a = QAction( 'Regenerate Sanseido definitions', ed )
@@ -76,12 +83,14 @@ def regenGlosses( ed, fids ):
 		f = mw.col.getNote(id=fid)
 		try: glossNote( f )
 		except:
-			import traceback
+			pass
+			"""import traceback
 			print 'definitions failed:'
-			traceback.print_exc()
+			traceback.print_exc()"""
 		try: f.flush()
 		except:
 			raise Exception()
+			#sleep(10*random.random())
 		ed.onRowChanged(f,f)
 	mw.progress.finish()
 	
