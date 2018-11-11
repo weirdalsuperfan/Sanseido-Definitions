@@ -19,11 +19,14 @@ from aqt.utils import showInfo
 import random
 
 from nhk_pronunciation import multi_lookup
+from japanese.reading import MecabController
 
 # Edit these field names if necessary ==========================================
 expressionField = 'Expression'
 definitionField = 'Sanseido'
 # ==============================================================================
+
+mecab = MecabController()
 
 # Fetch definition from Sanseido ===============================================
 def fetchDef(term):
@@ -51,7 +54,7 @@ def fetchDef(term):
 				defText += line.string
 				
 	defText = re.sub(ur"［(?P<no>[２-９]+)］", ur"<br/><br/>［\1］", defText)
-	if defText: defText = u"　・　<b>" + term + "</b>: " + defText
+	if defText: defText = u"　・　<b>" + term + "</b>: " + mecab.reading(defText)
 	return re.sub(ur"（(?P<num>[２-９]+)）", ur"<br/>（\1）", defText)
 
 # Update note ==================================================================
