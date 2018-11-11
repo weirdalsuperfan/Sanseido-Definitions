@@ -1,6 +1,6 @@
 A NOTE ON DEPENDENCIES: This currently requires the [Japanese Support addon](https://ankiweb.net/shared/info/3918629684) and the [the developer version of the NHK accent addon](https://github.com/weirdalsuperfan/nhk-pronunciation/tree/patch-1).
 
-After installing those, to install this addon, simply copy the following two files in the Sanseido-Definitions folder into your Anki addons folder. Copy the two files, not the folder, i.e. place the files at the top level of the addons folder - but if you already have a bs4 folder in your addons folder, do not overwrite it; just leave it as is.
+After installing those, to install this addon, simply copy the two files in the Sanseido-Definitions folder into your Anki addons folder. Copy the two files, not the folder, i.e. place the files at the top level of the addons folder - but if you already have a bs4 folder in your addons folder, do not overwrite it; just leave it as is.
 
 # Sanseido Definitions Plugin for Anki
 
@@ -23,7 +23,7 @@ Sanseido has some nice [辞書凡例](http://www.sanseido.biz/main/Dictionary/Ha
 ## Bugs?
 If bs4 does not work for you, report it on here and I will upload the version I personally use (this is a fork, but the original only used a partial bs4).
 
-Also report any bugs with parsing multiple words here.
+Also report any bugs with parsing multiple words on this page.
 
 Report other bugs and issues to the original plugin GitHub page [here](https://github.com/kqueryful/Sanseido-Definitions).
 
