@@ -9,21 +9,21 @@ This is a plugin for [Anki](http://ankisrs.net/), an open source flashcard syste
 ## Usage
 
 The plugin relies on having 2 fields,
-  * Expression - The Japanese word/words/setence to look up on sanseido
+  * Expression - The Japanese word/words/sentence to look up on sanseido
   * Sanseido - The field to insert the definition (annotated with 振り仮名) into
 
 If you'd like to change the names of these fields, edit lines 25-26 in sanseidoDefsForAnki.py
 
-To add definitions, find the card in the browser window, and click Edit > Regenerate Sanseido definitions
+To add definitions, find/highlight the card (or cards - works in bulk) in the Anki browser window, and click Edit > Regenerate Sanseido definitions
 
 ## Help on reading the definitions
 
 Sanseido has some nice [辞書凡例](http://www.sanseido.biz/main/Dictionary/Hanrei/dailyJJ.aspx) (Dictionary explanatory notes) for デイリーコンサイス国語辞典. Explanation on the symbols and abbreviations used can be found in section 9, 記号・略語一覧.
 
 ## Bugs?
-If bs4 does not work for you, report it on here and I will upload the version I personally use (this is a fork, but the original only used a partial bs4).
+If the bs4 folder included here does not work for you, report it on here and I will upload the version I personally use (this is a fork, but the original only used a partial bs4 so that's what I left on GitHub even though it's different from my local copy).
 
-Also report any bugs with parsing multiple words on this page.
+Also report any bugs related to parsing multiple words on this page.
 
-Report other bugs and issues to the original plugin GitHub page [here](https://github.com/kqueryful/Sanseido-Definitions).
+Report other bugs and issues to the original GitHub page of the addon [here](https://github.com/kqueryful/Sanseido-Definitions).
 
