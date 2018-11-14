@@ -4,7 +4,7 @@ After installing those, to install this addon, simply copy the two files in the 
 
 # Sanseido Definitions Plugin for Anki
 
-This is a plugin for [Anki](http://ankisrs.net/), an open source flashcard system. It pulls simplified J-J definitions from [sanseido.net](http://www.sanseido.net)'s デイリーコンサイス国語辞典 (Daily Concise Kokugo Jiten). This is a fork from the original, the AnkiWeb page of which can be found [here](https://ankiweb.net/shared/info/1967553085).
+This is a plugin for [Anki](http://ankisrs.net/), an open source flashcard system. It pulls simplified J-J definitions from [sanseido.net](http://www.sanseido.net)'s デイリーコンサイス国語辞典 (Daily Concise Kokugo Jiten). This is a fork from the original, the AnkiWeb page of which can be found [here](https://ankiweb.net/shared/info/1967553085).　This version allows you to retrieve definitions even when your field is not a single, perfect word. For example, 複雑な (particle attached), 川上・川下, or even entire sentences. Future versions may include support for detecting the citation/dictionary form of conjugated words, so that the word you perform a lookup on can be in any form.
 
 ## Usage
 
