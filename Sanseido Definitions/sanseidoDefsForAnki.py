@@ -54,7 +54,7 @@ def fetchDef(term):
 				defText += line.string
 				
 	defText = re.sub(ur"［(?P<no>[２-９]+)］", ur"<br/><br/>［\1］", defText)
-	if defText: defText = u"　・　<b>" + term + "</b>: " + mecab.reading(defText)
+	if defText: defText = u"　・　<b>定義</b>: " + mecab.reading(defText)
 	return re.sub(ur"（(?P<num>[２-９]+)）", ur"<br/>（\1）", defText)
 
 # Update note ==================================================================
@@ -66,7 +66,8 @@ from aqt import mw
 
 def glossNote( f ):
     if f[ definitionField ]: return
-    f[ definitionField ] = multi_lookup(f[ expressionField ], fetchDef, separator = "").lstrip('　・')
+    _, definition = multi_lookup(f[ expressionField ], fetchDef, separator = "")
+    f[ definitionField ] = definition.lstrip('　・')
 
 def setupMenu( ed ):
 	a = QAction( 'Regenerate Sanseido definitions', ed )
