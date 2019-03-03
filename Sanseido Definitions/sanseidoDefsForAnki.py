@@ -70,7 +70,8 @@ from aqt import mw
 def glossNote( f ):
     _, definition, _, _ = multi_lookup(f[ expressionField ], fetchDef, separator = "")
     f[ definitionField ] = definition.lstrip('　・')
-    f[ productionField ] = re.sub(ur'\<b\>.+?\<\/b\>', ur'<b>定義</b>', definition.lstrip('　・'))
+    if productionField:
+        f[ productionField ] = re.sub(ur'\<b\>.+?\<\/b\>', ur'<b>定義</b>', definition.lstrip('　・'))
 
 def setupMenu( ed ):
     a = QAction( 'Regenerate Sanseido definitions', ed )
