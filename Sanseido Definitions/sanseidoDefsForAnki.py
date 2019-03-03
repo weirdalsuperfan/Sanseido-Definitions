@@ -18,7 +18,7 @@ import re
 from aqt.utils import showInfo
 import random
 
-from nhk_pronunciation import multi_lookup
+from nhk_pronunciation_good import multi_lookup
 from japanese.reading import MecabController
 
 # Edit these field names if necessary ==========================================
@@ -68,8 +68,7 @@ from anki.notes import Note
 from aqt import mw
 
 def glossNote( f ):
-    if f[ definitionField ]: return
-    _, definition = multi_lookup(f[ expressionField ], fetchDef, separator = "")
+    _, definition, _, _ = multi_lookup(f[ expressionField ], fetchDef, separator = "")
     f[ definitionField ] = definition.lstrip('　・')
     f[ productionField ] = re.sub(ur'\<b\>.+?\<\/b\>', ur'<b>定義</b>', definition.lstrip('　・'))
 
