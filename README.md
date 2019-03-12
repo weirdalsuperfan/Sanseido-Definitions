@@ -4,7 +4,7 @@ After installing those, to install this addon, simply copy the two files in the 
 
 # Sanseido Definitions Plugin for Anki
 
-This is a plugin for [Anki](http://ankisrs.net/), an open source flashcard system. It pulls simplified J-J definitions from [sanseido.net](http://www.sanseido.net)'s デイリーコンサイス国語辞典 (Daily Concise Kokugo Jiten). This is a fork from the original, the AnkiWeb page of which can be found [here](https://ankiweb.net/shared/info/1967553085).　This version allows you to retrieve definitions even when your field is not a single, perfect word. For example, 複雑な (particle attached), 川上・川下, or even entire sentences. It also works even if your expression is conjugated!
+This is a plugin for the 2.0 version of [Anki](http://ankisrs.net/), an open source flashcard system. It pulls simplified J-J definitions from [sanseido.net](http://www.sanseido.net)'s デイリーコンサイス国語辞典 (Daily Concise Kokugo Jiten). This is a fork from the original, the AnkiWeb page of which can be found [here](https://ankiweb.net/shared/info/1967553085).　This version allows you to retrieve definitions even when your field is not a single, perfect word. For example, 複雑な (particle attached), 川上・川下, or even entire sentences. It also works even if your expression is conjugated!
 
 ## Usage
 
@@ -12,7 +12,7 @@ The plugin relies on having 3 fields,
   * Expression - The Japanese word/words/sentence to look up on sanseido
   * Sanseido - The field to insert the definition (annotated with 振り仮名) into
   
-  * ProductionDef - The same as Sanseido but with the word 定義 instead of the headword, for easily creating production cards.
+  * (Optional) ProductionDef - The same as Sanseido but with the word 定義 instead of the headword, for easily creating production cards.
 
 If you'd like to change the names of these fields, edit lines 25-27 in sanseidoDefsForAnki.py
 
@@ -29,3 +29,7 @@ Also report any bugs related to parsing multiple words on this page.
 
 Report other bugs and issues to the original GitHub page of the addon [here](https://github.com/kqueryful/Sanseido-Definitions).
 
+## TODO:
+* Fix [this bug](https://github.com/kqueryful/Sanseido-Definitions/issues/2) from the original plugin where you will get a definition that is actually for a base word of a compound word. This is because the plugin does not check if the word found on Sanseido's website is the same as the word sent to it, and because Sanseido requires you to click-through to that word. I may or may not try to get the plugin to click-through to search for the correct word if it exists on the website, but I will first add a check for the correct word so that users don't get confused and memorize the wrong definition.
+* Remove the dependency on the NHK plugin
+* Make needing the Japanese Support Plugin (for readings) optional
