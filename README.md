@@ -1,4 +1,4 @@
-A NOTE ON DEPENDENCIES: This currently requires the [Japanese Support addon](https://ankiweb.net/shared/info/3918629684) and the [the developer version of the NHK accent addon](https://github.com/weirdalsuperfan/nhk-pronunciation/tree/patch-1).
+A NOTE ON DEPENDENCIES: This currently requires the [Japanese Support addon](https://ankiweb.net/shared/info/3918629684) and the [the developer version of the NHK accent addon](https://github.com/weirdalsuperfan/nhk-pronunciation/tree/patch-1). Only support Anki 2.0
 
 After installing those, to install this addon, simply copy the two files in the Sanseido-Definitions folder into your Anki addons folder. Copy the two files, not the folder, i.e. place the files at the top level of the addons folder - but if you already have a bs4 folder in your addons folder, do not overwrite it; just leave it as is. You may also want to first refer to [this blog post](https://steviepoppe.net/blog/2016/10/a-quick-guide-on-using-anki-4-making-the-switch-j-j-definitions-in-your-vocab-cards/) about installing and using the addon, and after installation from Ankiweb, updating the files in your folder with the ones on this GitHub page.
 
