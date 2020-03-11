@@ -1,4 +1,4 @@
-This addon is no longer supported because [this dictionary addon](https://ankiweb.net/shared/info/1655992655) is just so convenient, but the current version should still work. Read the below paragraph for more information.
+This addon is no longer supported because [this other dictionary addon](https://ankiweb.net/shared/info/1655992655) is just so convenient, but the current version should still work. Read the below paragraph for more information.
 
 A NOTE ON DEPENDENCIES: This currently requires the [Japanese Support addon](https://ankiweb.net/shared/info/3918629684) and the [the developer version of the NHK accent addon](https://github.com/weirdalsuperfan/nhk-pronunciation/tree/patch-1). The full version only supports Anki 2.0, but I added an anki 2.1 version with the nbare minimum functionality (sanseido21.zip) that I don't think works on sentences or conjugated words that you should be able to use directly in Anki 2.1 if you unzip it in your addons21 folder. If it doesn't work, copy the bs4 folder into that unzipped folder too.
 
